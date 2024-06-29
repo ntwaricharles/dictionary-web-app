@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DictionaryComponent from "../components/DictionaryComponent";
+import FrameComponent from "../components/DictionaryComponent";
 
 const DictionaryPage: React.FunctionComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -280,7 +280,7 @@ const DictionaryPage: React.FunctionComponent = () => {
           )}
         </div>
       </div>
-      <DictionaryComponent
+      <FrameComponent
         synonyms={wordData?.meanings[0]?.synonyms}
         meanings={wordData?.meanings.map((meaning: any) => ({
           partOfSpeech: meaning.partOfSpeech,
