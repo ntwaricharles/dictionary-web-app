@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import FrameComponent from "../components/FrameComponent";
+import DictionaryComponent from "../components/DictionaryComponent";
 
-const DesktopLightSans: React.FunctionComponent = () => {
+const DictionaryPage: React.FunctionComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [wordData, setWordData] = useState<any>(null);
   const [error, setError] = useState("");
   const [fetchedWords, setFetchedWords] = useState<string[]>([]);
-  const [selectedFont, setSelectedFont] = useState("Sans Serif"); // Default font selection
+  const [selectedFont, setSelectedFont] = useState("Sans Serif"); 
   const [darkMode, setDarkMode] = useState(false);
   const [inputError, setInputError] = useState(false);
 
@@ -24,7 +24,6 @@ const DesktopLightSans: React.FunctionComponent = () => {
       setWordData(data[0]);
       setError("");
       setInputError(false);
-      // Add the term to fetchedWords if it's not already there
       if (!fetchedWords.includes(term)) {
         setFetchedWords([...fetchedWords, term]);
       }
@@ -40,9 +39,8 @@ const DesktopLightSans: React.FunctionComponent = () => {
       setInputError(true);
       return;
     }
-    // Check if searchTerm has already been fetched
     if (fetchedWords.includes(searchTerm)) {
-      setWordData(null); // Clear existing wordData to hide duplicates
+      setWordData(null); 
       setTimeout(() => {
         fetchWordData(searchTerm);
       }, 100);
@@ -282,7 +280,7 @@ const DesktopLightSans: React.FunctionComponent = () => {
           )}
         </div>
       </div>
-      <FrameComponent
+      <DictionaryComponent
         synonyms={wordData?.meanings[0]?.synonyms}
         meanings={wordData?.meanings.map((meaning: any) => ({
           partOfSpeech: meaning.partOfSpeech,
@@ -294,4 +292,4 @@ const DesktopLightSans: React.FunctionComponent = () => {
   );
 };
 
-export default DesktopLightSans;
+export default DictionaryPage;

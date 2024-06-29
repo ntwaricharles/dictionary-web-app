@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
 
-export type FrameComponentType = {
+export type DictionaryComponentType = {
   className?: string;
   synonyms?: string[];
   meanings?: { partOfSpeech: string; definitions: string[]; example?: string }[];
 };
 
-const FrameComponent: FunctionComponent<FrameComponentType> = ({
+const DictionaryComponent: FunctionComponent<DictionaryComponentType> = ({
   className = "",
   synonyms = [],
   meanings = [],
@@ -68,4 +68,4 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
   );
 };
 
-export default FrameComponent;
+export default DictionaryComponent;

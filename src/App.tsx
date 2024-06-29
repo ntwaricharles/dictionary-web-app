@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import DesktopLightSans from "./pages/DesktopLightSans";
+import DesktopLightSans from "./pages/DictionaryPage";
 
 function App() {
   const action = useNavigationType();
