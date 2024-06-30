@@ -81,7 +81,7 @@ const DictionaryPage: React.FunctionComponent = () => {
   return (
     <div
       className={`w-full relative overflow-hidden flex flex-col items-end justify-start pt-[58px] pb-[124px] pr-[352px] pl-0 box-border gap-[25px] leading-[normal] tracking-[normal] text-left text-lg ${
-        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+        darkMode ? "bg-black text-white" : "bg-white text-gray-800"
       } font-body-s-sans mq450:pr-5 mq450:box-border mq825:pr-44 mq825:box-border`}
     >
       <div className="w-[757px] flex flex-col items-end justify-start py-0 pr-0 pl-5 box-border gap-[40px] max-w-full mq825:gap-[20px]">
@@ -100,7 +100,7 @@ const DictionaryPage: React.FunctionComponent = () => {
                     value={selectedFont}
                     onChange={handleFontChange}
                     className={`relative leading-[24px] font-bold text-[inherit] inline-block min-w-[90px] outline-none border-none ${
-                      darkMode ? "bg-gray-800 text-white" : "text-gray-800"
+                      darkMode ? "bg-black text-white" : "text-gray-800"
                     }`}
                   >
                     <option value="Sans Serif">Sans Serif</option>
@@ -179,7 +179,6 @@ const DictionaryPage: React.FunctionComponent = () => {
                 {wordData.phonetics[0]?.audio && (
                   <div className="flex flex-col items-start justify-end pt-0 px-0 pb-[19px] ">
                     <button
-                      className=""
                       onClick={() => {
                         const audio = new Audio(wordData.phonetics[0].audio);
                         audio.play();
