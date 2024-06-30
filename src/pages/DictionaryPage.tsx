@@ -238,7 +238,7 @@ const DictionaryPage: React.FunctionComponent = () => {
                 className={`flex-1 outline-none text-lg border-none ${
                   darkMode ? "text-white" : "text-gray-800"
                 } font-body-s-sans bg-transparent`}
-                placeholder="Search..."
+                placeholder="Search for anything..."
                 autoFocus
               />
               <div
