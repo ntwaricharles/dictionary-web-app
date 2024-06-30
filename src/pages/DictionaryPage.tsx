@@ -35,7 +35,7 @@ const DictionaryPage: React.FunctionComponent = () => {
 
   const handleSearch = () => {
     if (searchTerm.trim() === "") {
-      setError("Input field cannot be left blank.");
+      setError("Whooops, can't be empty.");
       setInputError(true);
       return;
     }
@@ -80,7 +80,7 @@ const DictionaryPage: React.FunctionComponent = () => {
 
   return (
     <div
-      className={`w-full relative overflow-hidden flex flex-col items-end justify-start pt-[58px] pb-[124px] pr-[352px] pl-0 box-border gap-[25px] leading-[normal] tracking-[normal] text-left text-lg ${
+      className={`w-full min-h-screen relative overflow-hidden flex flex-col items-end justify-start pt-[58px] pb-[124px] pr-[352px] pl-0 box-border gap-[25px] leading-[normal] tracking-[normal] text-left text-lg ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-800"
       } font-body-s-sans mq450:pr-5 mq450:box-border mq825:pr-44 mq825:box-border`}
     >
@@ -225,7 +225,9 @@ const DictionaryPage: React.FunctionComponent = () => {
             </div>
           ) : (
             <div
-              className={`self-stretch rounded-2xl ${
+              className={`self-stretch rounded-2xl border ${
+                inputError ? "border-red-500" : "border-transparent"
+              } focus-within:border-purple-500 ${
                 darkMode ? "bg-gray-800" : "bg-gray-100"
               } overflow-hidden flex flex-row items-start justify-between py-5 px-6 box-border max-w-full gap-[20px] cursor-pointer`}
             >
@@ -233,9 +235,9 @@ const DictionaryPage: React.FunctionComponent = () => {
                 type="text"
                 value={searchTerm}
                 onChange={handleSearchInputChange}
-                className={`flex-1 outline-none border-none text-lg ${
-                  inputError ? "border border-red-500" : ""
-                } ${darkMode ? "text-white" : "text-gray-800"} font-body-s-sans bg-transparent`}
+                className={`flex-1 outline-none text-lg border-none ${
+                  darkMode ? "text-white" : "text-gray-800"
+                } font-body-s-sans bg-transparent`}
                 placeholder="Search..."
                 autoFocus
               />
@@ -275,7 +277,7 @@ const DictionaryPage: React.FunctionComponent = () => {
             </div>
           )}
           {inputError && (
-            <p className="text-red-500">Input field cannot be left blank.</p>
+            <p className="text-red-500">Whooops, can't be empty.</p>
           )}
         </div>
       </div>
