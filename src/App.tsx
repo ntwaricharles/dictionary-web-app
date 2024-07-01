@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import DesktopLightSans from "./pages/DictionaryPage";
+import DictionaryPage from "./pages/DictionaryPage";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<DesktopLightSans />} />
+      <Route path="/" element={<DictionaryPage />} />
     </Routes>
   );
 }
