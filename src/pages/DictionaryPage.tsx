@@ -9,7 +9,6 @@ const DictionaryPage: React.FunctionComponent = () => {
   const [selectedFont, setSelectedFont] = useState("Sans Serif");
   const [darkMode, setDarkMode] = useState(false);
   const [inputError, setInputError] = useState(false);
-  console.log(wordData);
   const fetchWordData = async (term: string) => {
     try {
       const response = await fetch(
@@ -212,7 +211,10 @@ const DictionaryPage: React.FunctionComponent = () => {
                       darkMode ? "text-gray-300" : "text-gray-600"
                     } inline-block min-w-[82px] mq450:text-base ${fontClass}`}
                   >
-                    {meaning.definitions[0]?.definition}
+                    {meaning.definitions && <h1>Meaning</h1>}
+                    {meaning.definitions?.map((definition: any, id: number) => (
+                      <li key={id}>{definition.definition}</li>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -226,17 +228,25 @@ const DictionaryPage: React.FunctionComponent = () => {
               darkMode ? "bg-gray-800" : "bg-gray-100"
             } overflow-hidden flex flex-row items-start justify-between py-5 px-6 box-border max-w-full gap-[20px] cursor-pointer`}
           >
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchInputChange}
-              className={`flex-1 outline-none text-lg border-none ${
-                darkMode ? "text-white" : "text-gray-800"
-              } font-body-s-sans bg-transparent`}
-              placeholder="Search for anything..."
-              autoFocus
-            />
-
+            <form
+              action=""
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+                setSearchTerm("");
+              }}
+            >
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={handleSearchInputChange}
+                className={`flex-1 outline-none text-lg border-none ${
+                  darkMode ? "text-white" : "text-gray-800"
+                } font-body-s-sans bg-transparent`}
+                placeholder="Search for anything..."
+                autoFocus
+              />
+            </form>
             <div
               onClick={handleSearch}
               className="flex flex-col items-start justify-start pt-1 px-0 pb-0"
