@@ -92,7 +92,7 @@ const DictionaryPage: React.FunctionComponent = () => {
 
       <div className="w-full lg:w-1/2 mx-auto flex justify-between pt-6 px-2">
         <img
-          className="h-9 w-8 relative object-cover  filter brightness-100 dark:brightness-50"
+          className="ml-6 h-9 w-8 relative object-cover  filter brightness-100 dark:brightness-50"
           alt=""
           src="/iconoir-book@2x.png"
           style={{

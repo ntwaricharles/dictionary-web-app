@@ -13,14 +13,14 @@ const DictionaryComponent: FunctionComponent<DictionaryComponentType> = ({
 }) => {
   return (
     <div
-      className={`w-[756px] flex flex-col items-start justify-start py-0 pr-0 pl-5 box-border gap-[40px] max-w-full text-left text-xl text-color font-body-s-sans mq825:gap-[20px] ${className}`}
+      className={`w-[756px] flex flex-col items-start justify-start py-0 pr-0 pl-5 box-border gap-[40px] max-w-full text-left text-xl text-color font-body-s-sans ${className}`}
     >
       {synonyms.length > 0 && (
         <div className="flex flex-row items-start justify-start gap-[22px]">
-          <div className="relative inline-block min-w-[98px] mq450:text-base">
+          <div className="relative inline-block min-w-[98px]">
             Synonyms
           </div>
-          <b className="relative text-a445ed mq450:text-base">
+          <b className="relative text-a445ed">
             {synonyms.join(", ")}
           </b>
         </div>
@@ -29,17 +29,17 @@ const DictionaryComponent: FunctionComponent<DictionaryComponentType> = ({
         {meanings.map((meaning, index) => (
           <div
             key={index}
-            className="self-stretch flex flex-col items-start justify-start gap-[40px] max-w-full mq825:gap-[20px]"
+            className="self-stretch flex flex-col items-start justify-start gap-[40px] max-w-full"
           >
             <div className="self-stretch flex flex-row flex-wrap items-start justify-start gap-[26px] max-w-full">
-              <i className="relative inline-block font-bold min-w-[54px] mq450:text-lgi">
+              <i className="relative inline-block font-bold min-w-[54px]">
                 {meaning.partOfSpeech}
               </i>
               <div className="flex-1 flex flex-col items-start justify-start pt-3.5 px-0 pb-0 box-border min-w-[426px] max-w-full lg:min-w-full">
                 <div className="self-stretch h-px relative bg-e9e9e9" />
               </div>
             </div>
-            <div className="relative text-xl text-color inline-block min-w-[82px] mq450:text-base">
+            <div className="relative text-xl text-color inline-block min-w-[82px]">
               Meaning
             </div>
             {meaning.definitions.map((definition, defIndex) => (
