@@ -90,7 +90,7 @@ const DictionaryPage: React.FunctionComponent = () => {
     >
       {/* top 1st section */}
 
-      <div className="w-full lg:w-3/5 mx-auto flex justify-between pt-6 px-2">
+      <div className="w-full lg:w-3/4 mx-auto flex justify-between pt-6 px-2">
         <img
           className="ml-6 h-9 w-8 relative object-cover  filter brightness-100 dark:brightness-50"
           alt=""
@@ -138,7 +138,7 @@ const DictionaryPage: React.FunctionComponent = () => {
         </div>
       </div>
       {/* search section */}
-      <section className="w-full lg:w-3/5 mx-auto px-8 py-20">
+      <section className="w-full lg:w-3/4 mx-auto px-8 py-20">
         {wordData ? (
           <div className="self-stretch flex flex-col items-end justify-start gap-[45px] max-w-full text-xl mq825:gap-[22px]">
             <div
